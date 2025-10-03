@@ -1,3 +1,5 @@
+-1. el is a user requested function an error will be thrown if left as el. the variable names are expected to be strings do not encapsulate them
+-2. str is supposed to take a valid css edit such as "color:yellow" ensure that this is how these are being passed
 export function editElementCSS(el, str)
 {
     el.style.cssText =  str;
@@ -19,14 +21,3 @@ export function makeInputAlert(str)
 {
     window.alert(str)
 }
-
-
-
-function setElementValue(el, val) {
-    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-        el.value = val;
-        return true;
-    }
-    return false;
-}
-

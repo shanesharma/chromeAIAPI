@@ -10,7 +10,7 @@ app.use(express.static("public"))
 
 app.get("/filedata", (req, res) => 
 {
-    res.sendFile("/Users/shanesharma/Desktop/screenshots/test.PNG")
+    //res.sendFile("/Users/shanesharma/Desktop/screenshots/test.PNG")
 })
 
 app.listen(3000, () => console.log("hello"))

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval'">
 <head>
   <title>Prompt API test</title>
 </head>
@@ -10,8 +11,9 @@
   <pre id="output"></pre>
   <input type="input" id="prompt" name="AI_Prompt" placeholder="Enter a prompt">
 
-
-  <script type="module" src="/test.js">
+  <script type="module" src="/helper.js"> </script>
+  <script type="module" src="/test.js"> </script>
+  
     
   </script>
 </body>
