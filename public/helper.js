@@ -4,6 +4,15 @@ export function editElementCSS(el, str)
 }
 
 
+export const textToObj = (txt) => {return {txt} }
+
+export function getHighlightedText(obj)
+{
+    return 
+}
+
+
+
 export function focusOnElement(el)
 {
     const tagType = el.tagName()
