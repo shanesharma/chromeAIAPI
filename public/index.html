@@ -10,50 +10,9 @@
   <pre id="output"></pre>
   <input type="input" id="prompt" name="AI_Prompt" placeholder="Enter a prompt">
 
-  <script type="module">
-    document.getElementById("output").textContent  = " ";
-    document.getElementById("run").addEventListener("click", async () => {
-      
-      const params = await LanguageModel.params();
-      try {
-        let req = document.getElementById("prompt").value;
-        document.getElementById("output").textContent  = " ";
 
-        const referenceImage = document.getElementById("referenceImage");
-        const session = await LanguageModel.create({
-    expectedInputs: [
-        { type: "text", languages: ["en" /* system prompt */,] },
-        { type: "image" }
-      ],
-      expectedOutputs: [
-        { type: "text", languages: ["en"] }
-        ]
-        ,
-        temperature: .1,
-
-        topK: params.defaultTopK,
-        });
-
-        const result = await session.promptStreaming([
-          {
-            role: "user",
-            content: [
-              { type: "text", value: req },
-              { type: "image", value: referenceImage }
-            ],
-          },
-        ]);
-
-        for await(const chunk of result){
-        document.getElementById("output").textContent += chunk;
-        }
-        const { inputQuota, inputUsage } = session
-        document.getElementById("output").textContent += inputUsage ;
-
-      } catch (err) {
-        document.getElementById("output").textContent = "Error: " + err;
-      }
-    });
+  <script type="module" src="/test.js">
+    
   </script>
 </body>
 </html>
