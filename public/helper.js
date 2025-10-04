@@ -8,7 +8,7 @@ export const textToObj = (txt) => {return {txt} }
 
 export function getHighlightedText(obj)
 {
-    return 
+    return obj.getHighlightedText
 }
 
 
@@ -31,11 +31,12 @@ export function makeInputAlert(str)
 
 
 
-function setElementValue(el, val) {
+export function setElementValue(el, val) {
     if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
         el.value = val;
         return true;
     }
     return false;
 }
+
 
